@@ -12,13 +12,30 @@ public class Controller {
     }
 
     @GetMapping("/pathvariable/{id}/{name}")
-    public void pathVariable2(@PathVariable("id") Long id, @PathVariable String name){
+    public void pathVariable2(@PathVariable("id") Long id, @PathVariable("name") String name){
+        System.out.println("id = " + id);
+        System.out.println("name = " + name);
+    }
+
+    @PostMapping("/pathvariable/{id1}")
+    public void pathVariable3(@PathVariable("id1") Long id){
+        System.out.println("id = " + id);
+    }
+
+    @PostMapping("/pathvariable/{id1}/{name1}")
+    public void pathVariable4(@PathVariable("id1") Long id, @PathVariable("name1") String name){
         System.out.println("id = " + id);
         System.out.println("name = " + name);
     }
 
     @GetMapping("/query")
-    public void query(@RequestParam Long id,@RequestParam String name){
+    public void query1(@RequestParam Long id,@RequestParam String name){
+        System.out.println("id = " + id);
+        System.out.println("name = " + name);
+    }
+
+    @PostMapping("/query")
+    public void query2(@RequestParam Long id,@RequestParam String name){
         System.out.println("id = " + id);
         System.out.println("name = " + name);
     }
